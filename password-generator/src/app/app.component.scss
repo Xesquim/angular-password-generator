@@ -29,7 +29,6 @@ mat-icon {
   border-right: 0.15em solid #{$pink};
   white-space: nowrap;
   margin: 8px auto;
-  letter-spacing: 0.15em;
   animation: typing 3s steps(35, end), blink-bar 0.75s step-end infinite;
 }
 
@@ -49,25 +48,22 @@ mat-icon {
   text-align: center;
 }
 
-.slider {
+.error {
+  width: 100%;
+  white-space: nowrap;
+}
+
+mat-slider {
   margin-left: 8px;
-  width: 55%;
 }
 
 .generated-password-section {
-  width: 50%;
   text-align: center;
   margin: 16px 0;
   overflow-x: auto;
-  font-size: 2em;
-}
-
-.error {
-  width: 100%;
 }
 
 .options {
-  width: 50%;
   margin-top: 32px;
   padding: 16px 0;
 }
@@ -87,19 +83,73 @@ mat-icon {
 
 .checkbox-section {
   text-align: center;
+  margin-top: 8px;
 }
 
 .copy-button {
   margin-top: 32px;
   padding: 24px;
-  width: 50%;
-  font-size: 1.5em;
 }
 
 .action-button {
   border: none;
-  margin: 0 8px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 767px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .generated-password-section {
+    width: 75%;
+    font-size: 1.5em;
+  }
+
+  .action-button:nth-last-child(1) {
+    margin-right: 8px;
+  }
+
+  .copy-button {
+    width: 75%;
+  }
+
+  .options {
+    width: 75%;
+  }
+
+  mat-slider {
+    width: 50% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .title {
+    font-size: 36px;
+    letter-spacing: 0.15em;
+  }
+
+  .generated-password-section {
+    width: 50%;
+    font-size: 2em;
+  }
+
+  .action-button {
+    margin: 0 8px;
+  }
+
+  .copy-button {
+    font-size: 1.5em;
+    width: 50%;
+  }
+
+  .options {
+    width: 50%;
+  }
+
+  mat-slider {
+    width: 55% !important;
+  }
 }
 
 /* #region scrollbar */
@@ -123,8 +173,17 @@ mat-icon {
 /* #endregion */
 
 /* #region to change angular material color/size */
-.mdc-label {
-  font-size: 16px !important;
+@media only screen and (max-width: 767px) {
+  .mdc-label {
+    font-size: 12px !important;
+    padding: 0 !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mdc-label {
+    font-size: 16px !important;
+  }
 }
 
 .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
