@@ -41,6 +41,7 @@
           Enter a valid value
         </mat-error>
         <mat-error
+          class="error"
           *ngIf="
             passwordForm.controls['length'].hasError('min') ||
             passwordForm.controls['length'].hasError('max')
