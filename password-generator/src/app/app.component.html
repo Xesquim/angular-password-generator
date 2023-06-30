@@ -68,13 +68,22 @@
       </mat-slider>
 
       <section class="checkbox-section">
-        <mat-checkbox class="checkbox-control" formControlName="useLetters"
+        <mat-checkbox
+          class="checkbox-control"
+          formControlName="useLetters"
+          (change)="generate()"
           >Include letters</mat-checkbox
         >
-        <mat-checkbox class="checkbox-control" formControlName="useNumbers"
+        <mat-checkbox
+          class="checkbox-control"
+          formControlName="useNumbers"
+          (change)="generate()"
           >Include numbers</mat-checkbox
         >
-        <mat-checkbox class="checkbox-control" formControlName="useSymbols"
+        <mat-checkbox
+          class="checkbox-control"
+          formControlName="useSymbols"
+          (change)="generate()"
           >Include symbols</mat-checkbox
         >
       </section>
@@ -85,7 +94,7 @@
     mat-raised-button
     color="primary"
     class="copy-button"
-    [cdkCopyToClipboard]="generatedPassword"
+    [cdkCopyToClipboard]="passwordForm.controls['generatedPassword'].value"
   >
     Copy to clipboard
   </button>
