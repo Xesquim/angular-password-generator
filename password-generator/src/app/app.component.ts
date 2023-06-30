@@ -36,12 +36,6 @@ export class AppComponent {
     });
   }
 
-  public teste(value: any): void {
-    console.log('aaaa');
-
-    console.log(value);
-  }
-
   public onLengthChange(): void {
     this.generate();
   }
