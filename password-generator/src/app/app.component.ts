@@ -54,7 +54,7 @@ export class AppComponent {
     if (this.passwordForm.controls['useNumbers'].value) validChars += numbers;
     if (this.passwordForm.controls['useSymbols'].value) validChars += symbols;
 
-    for (let i = 0; i <= this.passwordForm.controls['length'].value; i++) {
+    for (let i = 0; i < this.passwordForm.controls['length'].value; i++) {
       var mix = validChars.charAt(
         Math.floor(Math.random() * validChars.length)
       );
